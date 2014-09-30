@@ -32,12 +32,10 @@
 				<div class="h-row">
 					<strong class="logo"><a href="#">instabank</a></strong>
 					<ul id="nav">
-						<!-- <li><a href="discount.html">Скидки</a></li> -->
-						<!-- <li><a href="#">Блог</a></li> -->
+						<li><a href="discount.html">Скидки</a></li>
+						<li><a href="blog.html">Блог</a></li>
 						<li><a href="tariffs.html">Тарифы</a></li>
-						<li><a href="discount.html">Скидки</a></li> 
-						<li><a href="#contact" class="scrollto">Информация</a></li>
-						 
+						<li><a href="#contact" class="scrollto" data-page-id="8">Информация</a></li>
 					</ul>
 					<a class="h-box btn-download-app" href="#popup-download-app">
 						<span class="ios">ios</span>
@@ -81,25 +79,25 @@
 									<div class="ico">
 										<img src="images/ico-rate.png" alt="" width="46" height="46" />
 									</div>
-									<span class="txt">10% годовых на остаток каждый месяц</span>
+									<span class="txt"><a href="#presents" class="scrollto" data-page-id="3">10% годовых</a> на остаток каждый месяц</span>
 								</li>
 								<li>
 									<div class="ico">
 										<img src="images/ico-sale.png" alt="" width="46" height="46" />
 									</div>
-									<span class="txt">Скидки и привилегии по карте MasterCard Gold</span>
+									<span class="txt"><a href="discount.html">Скидки и привилегии</a> по карте MasterCard Gold</span>
 								</li>
 								<li>
 									<div class="ico">
 										<img src="images/ico-free.png" alt="" width="46" height="46" />
 									</div>
-									<span class="txt">Первый год обслуживания - бесплатно!</span>
+									<span class="txt">Первый год <a href="#tarifs_services" class="scrollto" data-page-id="7">обслуживания</a> - бесплатно!</span>
 								</li>
 								<li>
 									<div class="ico">
 										<img src="images/ico-completion.png" alt="" width="46" height="46" />
 									</div>
-									<span class="txt">Удобное и бесплатное пополнение</span>
+									<span class="txt">Удобное и <a class="btn-completion" href="#popup-completion">бесплатное пополнение</a></span>
 								</li>
 							</ul>
 						</div>
@@ -107,22 +105,26 @@
 				</div>
 				<a href="#" class="btn-next">next</a>
 			</div>
-			<div class="section item03">
+			<div class="section item03" id="presents">
 				<div class="page-holder">
 					<div class="holder-info">
 						<div class="range-box">
 							<div class="inner-circle">
 								<div class="price-slide" id="slider-range-max"></div>
 								<div class="txt-row">
-									<p>При среднемесячном остатке <br /> <span id="amount"></span><br />за год я получу:</p>
+									<p>При среднемесячном остатке <br /> <span id="amount"></span><br />за <span class="calcPer_month">месяц</span><span class="calcPer_year">год</span> я получу:</p>
 									<div class="row">
-										<span id="summery"></spanid>
+										<span id="summery"></span>
 									</div>
 								</div>
 							</div>
 							<div class="calculation-diagrams">
 								<canvas width="460" height="460" id="counter"></canvas>
 							</div>
+							<p class="note">
+								<a href="#" class="month">Посмотреть расчет за месяц</a>
+								<a href="#" class="year">Посмотреть расчет за год</a>
+							</p>
 						</div>
 						<div class="txt-box">
 							<h2>Карта Instabank с доходом</h2>
@@ -130,7 +132,7 @@
 								<span class="num">10</span>
 								<div class="box">
 									<span class="txt">%</span>
-									<span class="text">годовых на остаток</span>
+									<span class="text"><a class="btn-balance" href="#popup-balance">годовых на остаток</a></span>
 								</div>
 							</div>
 						</div>
@@ -240,7 +242,7 @@
 				</div>
 				<a href="#" class="btn-next">next</a>
 			</div>
-			<div class="section item05">
+			<div class="section item05" id="tarifs_services">
 				<div class="page-holder">
 					<div class="inform-section">
 						<h2>Выгодный тариф “Instabank” ­ - <span class="txt">150</span>  в месяц за все:</h2>
@@ -283,6 +285,11 @@
 					<div id="footer">
 						<div class="content-holder" id="contact">
 							<div class="content-frame center">
+								<a class="h-box btn-download-app" href="#popup-download-app">
+									<span class="ios">ios</span>
+									<span class="play">play</span>
+									<span class="txt">Попробуйте Instabank бесплатно</span>
+								</a>
 								<h3>Контакты</h3>
 								<ul class="contact-list">
 									<li>8-800-775-90-80</li>
@@ -294,6 +301,7 @@
 									<li class="twitter"><a href="https://twitter.com/instabankru">twitter</a></li>
 									<li class="facebook"><a href="https://www.facebook.com/Instabank">facebook</a></li>
 									<li class="youtube"><a href="https://www.youtube.com/instabankru">youtube</a></li>
+									<li class="vk"><a href="http://vk.com/instabankru">vk</a></li>
 								</ul>
 							</div>
 						</div>
@@ -368,6 +376,60 @@
 			</div>
 		</div>
 	</div>
+
+	<div class="popup" id="popup-completion">
+		<div class="popup-content">
+			<div class="popup-frame">
+				<div class="entry">
+					<h2>Пополнение с карт других банков</h2>
+					<p>Самый простой и быстрый способ пополнить карту инстабанк - сделать перевод с карты другого банка. До 125 000 руб. в 30 дней это можно сделать без комисии. Все что нужно - ввести реквизиты карты или сфотографировать их, и нажать несколько кнопок в приложении. </p>
+					<div class="box-phone">
+						<div class="phone-holder">
+							<img src="images/image04.jpg" height="419" width="236" alt="" />
+						</div>
+					</div>
+					<p>Иногда, другие банки берут комиссию за такой перевод или просто блокируют перевод. На всякий случай, лучше уточнить такую информацию в банке, который выпустил карту.  </p>
+					<p>&nbsp;</p>					<h2>Пополнение в банкомате</h2>
+					<p>Удобный и бесплатный способ, но потребуется пройтись.</p>
+					<p>Нужно в приложении выбрать удобный банкомат, дойти до него и внести наличные.<br/> Для бесплатного пополнения карт Instabank доступны банкоматы Банка Москвы,<br/> Военно-Промышленного банка и банкоматы банков участников системы “ОРС”. </p>
+					<p>Карта банкоматов всегда доступна внутри приложения.</p>
+					<p>&nbsp;</p>
+					<h2>Пополнение банковским переводом</h2>
+					<p>Простой и дешевый способ, но деньги могут идти 1 - 3 дня.</p>
+					<p>Нужно зайти в приложение, в боковом меню найти раздел “Пополнение” и выбрать пункт “Переводом по реквизитам”. Далее, по этим реквизитам совершить платеж из стороннего интернетб-банка.</p>
+					<p>Некотороые банки берут комиссию за такие переводы, поэтому, лучше уточнить информацию в банке, из коготорого вы будете совершать перевод. Instabank комиссию за такое пополнение не возьмет.  </p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="popup" id="popup-balance">
+		<div class="popup-content">
+			<div class="popup-frame">
+				<div class="entry">
+					<h2>10% на остаток</h2>
+					<p>Каждый месяц мы начисляем вам 10% годовых на среднемесячный остаток по счету дебетовой карты, при условии что на нем более 20 000 руб. У нас нет лимитов на максимальную сумму начисления процентов - вы заработаете 10% и с 20 000 руб. и с 1 млн. руб.. </p>
+					<p>&nbsp;</p>
+					<h2>Как рассчитываются и начисляются проценты?</h2>
+					<p>Проценты рассчитываются в конце месяца, исходя из остатов по счету за каждый день месяца. Проценты начисляются и выплачиваются ежемесячно, не позднее третьего рабочего дня.</p>
+					<p>&nbsp;</p>
+					<h2>Мне начислят проценты, если в один из дней мой остаток опустится ниже 20 000 руб.? </h2>
+					<p>Да, начислят. Главное, чтобы по итогам месяца среднемесячный остаток оказался выше 20 000 руб. </p>
+					<p>&nbsp;</p>
+
+					<h2>Как посчитать среднемесячный остаток?</h2>
+					<p>Нужно разделить сумму остатка на счете в конце каждого дня на количество календарных дней в месяце. </p>
+					<p>Возьмем для примера стандартный месяц в 30 дней. Представим, что первые 10 дней месяца на вашем счете 10 000 руб., вторые 10 дней - 50 000 руб. и последние 10 дней - 300 000 руб. Ниже формула расчета:</p>
+					<p>(10 000 * 10 дней) + (50 000 * 10 дней) + (300 000 + 10 дней) / 30 = 120 000 руб. Это ваш среднемесячный остаток. На него будут начислены и выплачены 10% процентов.</p>
+					<p>&nbsp;</p>
+
+					<h2>А что дальше? Как посчитать сколько я получу за месяц и за год?</h2>
+					<p>Все просто. Например ваш среднемесячный остаток составил 60 000 руб.: </p>
+					<p>За месяц вы получите: (60 000 * 10%) / 12 = 500 руб.<br /> За год вы получите: 60 000 * 10% = 6 000 руб. Это без учета капитализации. Если ее учесть, будет еще больше :) </p>
+				</div>
+			</div>
+		</div>
+	</div>
 	
 	
 	<!-- Google Analytics -->
@@ -409,6 +471,7 @@
 	<script type="text/javascript" src="js/jquery.fullPage.min.js"></script>
 	<script type="text/javascript" src="js/fancybox/jquery.fancybox.pack.js"></script>
 	<script type="text/javascript" src="js/jquery-ui.js"></script>
+	<script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
 	<script type="text/javascript" src="js/jquery.main.js"></script>
 </body>
 </html>

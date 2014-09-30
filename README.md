@@ -1,1 +1,0 @@
-HTML sources for instabank.ru
