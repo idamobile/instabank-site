@@ -318,9 +318,6 @@ header .txt-box p{
 	display: none;
 }
 
-.flip-container {
-	height: 412px;
-}
 /*.not_is_touch .flip-container{
 	-moz-perspective: 1000;
     -o-perspective: 1000;
@@ -370,7 +367,7 @@ header .txt-box p{
 }*/
 
 .flipper .back {
-    display: none;
+/*    display: none;*/
 }
 
 /*.not_is_touch .flipper .back {
@@ -397,7 +394,7 @@ header .txt-box p{
 }*/
 
 .flipper .front {
-    z-index: 5;
+/*    z-index: 5;*/
     background: #fff;
 	cursor: pointer;
 }
@@ -429,8 +426,8 @@ header .txt-box p{
 	height:auto;
 }
 .info-lst .txt-box{
-	position: absolute;
-	top: 0;
+	position: initial;
+	margin-top: -412px;
 	color: #fff;
 	text-align: center;
 	font-size: 29px;
