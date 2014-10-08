@@ -1,5 +1,8 @@
 
 var calcPer = 'year';
+var created = false;
+var cardsVisible = false;
+var anim4 = false;
 
 $(document).ready(function() {
 	if(isMobile.hasTouch()){
@@ -21,9 +24,38 @@ $(document).ready(function() {
 	Range();
 	
 	if($(".flip-container").length) {
-		var oldFlip = null;
-		$(".flip-container .front").bind("click",function(){
-			var elem = $(this);
+		var oldFlip = null,
+		flipping = false;
+		$(".flip-container .close").on("click", function(e) {
+			e.preventDefault();
+		})
+		$(".card-container").click(function(){
+			if(!flipping){
+				var $card = $(this);
+				$(this).flip({
+					direction: "lr",
+					alwaysOneDirection: false,
+					onflipping: function(dir, transDir) {					
+						flipping = true;
+						$(".flipped-lr").flip({
+							direction: "lr",
+							alwaysOneDirection: false
+						})
+					},
+					onflipped: function(dir, transDir) {					
+						flipping = false;
+					}
+				});
+			}
+		})
+		
+		/*$(".flip-container").bind("click",function(){
+			var $elem = $(this);
+		
+			$elem.flip({
+				direction: "lr",
+				alwaysOneDirection: false
+			});
 		
 			if(oldFlip && oldFlip.data('flipped')){
 				oldFlip.revertFlip();
@@ -55,28 +87,14 @@ $(document).ready(function() {
 								oldFlip = null;
 							}
 							
-							/*var parent = $(this).parents('.flip-container');
-							if(parent.hasClass('hover')){
-								parent.removeClass('hover');
-							}*/
 							return false;
 						});
 					}
 				});
 				elem.data('flipped',true);
 			}
-		});
+		});*/
 	}
-    
-	
-	/*$(".flip-container .front").click(function() {
-		var parent = $(this).parents('.flip-container');
-		if(!parent.hasClass('hover')){
-			$(".flip-container").removeClass('hover');
-			parent.addClass('hover');
-		}
-		return false;
-    })*/;
 
 	
 	$(".scrollto").click(function() {
@@ -86,14 +104,18 @@ $(document).ready(function() {
 			}, 600);
 		} else {
 			var page_id = $(this).data('page-id');
-			$.fn.fullpage.moveTo(page_id)
+			if(created) {
+				$.fn.fullpage.moveTo(page_id)
+			}
 		}
 		return false;
     });
 	
 	if(!isMobile.hasTouch()){
 		$('.home-page .logo a').click(function(){
-			$.fn.fullpage.moveTo(1);
+			if(created) {
+				$.fn.fullpage.moveTo(1);
+			}
 			$('#home-video')[0].play();
 			return false;
 		});
@@ -101,7 +123,9 @@ $(document).ready(function() {
 	
 	$('.btn-next').click(function(){
 		var i_ = $(this).closest('.section').index();
-		$.fn.fullpage.moveTo(i_ + 2);
+		if(created) {
+			$.fn.fullpage.moveTo(i_ + 2);
+		}
 		return false;
 	});
 	$(".btn-download-app").fancybox({
@@ -117,10 +141,14 @@ $(document).ready(function() {
 			overlay: {locked: true}
 		},
 		beforeShow: function(){
-			$.fn.fullpage.setAllowScrolling(false);
+			if(created) {
+				$.fn.fullpage.setAllowScrolling(false);
+			}
 		}, 
 		beforeClose: function(){
-			$.fn.fullpage.setAllowScrolling(true);
+			if(created) {
+				$.fn.fullpage.setAllowScrolling(true);
+			}
 		}
 	});
 	$(".item03 .note a").click(function(){
@@ -345,6 +373,12 @@ $(window).on('load resize', function(){
 	}
 	var w = $(window).outerWidth();
 	var h = $(window).outerHeight();
+	
+	if($(".flip-container").length){
+		var cardH = $(".flip-container").height()
+		$(".flip-container .txt-box").css({"margin-top":"-"+cardH+"px"});
+	}
+	
 });
 
 
@@ -364,9 +398,6 @@ function ScrollH(){
 	});
 }
 
-var created = false;
-var cardsVisible = false;
-var anim4 = false;
 function Home(){
 	if($('.home-page #main').length && !isMobile.hasTouch()){
 		
@@ -575,8 +606,8 @@ function infp_list_flip_height(){
 	$( ".info-lst li" ).each(function( index ) {
 		var h = $(this).find('.img').outerHeight() + $(this).find('.txt-box').outerHeight();
 		$(this).find('.flip-container').height(h);
-		$(this).find('.flipper .front').height(h);
-		$(this).find('.flipper .back').height(h);
+//		$(this).find('.flipper .front').height(h);
+//		$(this).find('.flipper .back').height(h);
 	});
 }
 
